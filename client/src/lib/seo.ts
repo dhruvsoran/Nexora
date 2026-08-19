@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 // Set VITE_SITE_URL in your host (e.g. Vercel) to your production domain.
-export const SITE_URL = (import.meta.env.VITE_SITE_URL ?? 'https://nexora.app').replace(/\/+$/, '');
+export const SITE_URL = (import.meta.env.VITE_SITE_URL ?? 'https://nexora-ruby-nu.vercel.app').replace(/\/+$/, '');
 
 interface PageMeta {
   title: string;
