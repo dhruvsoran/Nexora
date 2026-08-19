@@ -1,8 +1,12 @@
 import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
 import { useAuthStore } from '../store/auth';
 
+// In dev the Vite proxy forwards /api to the API; in prod set VITE_API_URL
+// (e.g. Render) so the browser talks directly to the API origin.
+export const API_ORIGIN = (import.meta.env.VITE_API_URL ?? '').replace(/\/+$/, '');
+
 export const api = axios.create({
-  baseURL: '/api',
+  baseURL: `${API_ORIGIN}/api`,
   withCredentials: true,
 });
 
@@ -18,7 +22,7 @@ let refreshPromise: Promise<string | null> | null = null;
 
 async function refreshAccessToken(): Promise<string | null> {
   try {
-    const { data } = await axios.post('/api/auth/refresh', null, { withCredentials: true });
+    const { data } = await axios.post(`${API_ORIGIN}/api/auth/refresh`, null, { withCredentials: true });
     useAuthStore.getState().setAccessToken(data.data.accessToken);
     return data.data.accessToken as string;
   } catch {

@@ -1,12 +1,13 @@
 import { io, Socket } from 'socket.io-client';
 import { useAuthStore } from './auth';
+import { API_ORIGIN } from '../api/client';
 
 let socket: Socket | null = null;
 
 export function connectSocket(): Socket {
   if (socket) return socket;
   const token = useAuthStore.getState().accessToken;
-  socket = io('/', {
+  socket = io(API_ORIGIN || '/', {
     auth: { token },
     withCredentials: true,
     transports: ['websocket', 'polling'],

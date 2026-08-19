@@ -23,7 +23,7 @@ function setTokens(res: Response, userId: string): { accessToken: string; refres
   res.cookie('refreshToken', refreshToken, {
     httpOnly: true,
     secure: config.cookieSecure,
-    sameSite: 'lax',
+    sameSite: config.cookieSecure ? 'none' : 'lax',
     maxAge: REFRESH_TOKEN_AGE_MS,
     path: '/api/auth',
   });
