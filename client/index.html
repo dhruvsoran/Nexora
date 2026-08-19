@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0d9488" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a1112" media="(prefers-color-scheme: dark)" />
+
+    <title>Nexora — AI Project Management & Team Collaboration</title>
+    <meta
+      name="description"
+      content="Nexora is the project workspace that thinks ahead — kanban boards, milestones, team chat, time tracking and a voice-enabled AI assistant in one fast app."
+    />
+    <meta
+      name="keywords"
+      content="project management, kanban board, AI project assistant, agile software, team collaboration, milestones, sprint planning, time tracking, task management"
+    />
+    <meta name="author" content="Dhruv Soran" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://nexora.app/" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nexora" />
+    <meta property="og:title" content="Nexora — AI Project Management & Team Collaboration" />
+    <meta
+      property="og:description"
+      content="Plan, track and ship with kanban boards, milestones, team chat and an AI assistant in one workspace."
+    />
+    <meta property="og:url" content="https://nexora.app/" />
+    <meta property="og:image" content="https://nexora.app/og-image.svg" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nexora — AI Project Management & Team Collaboration" />
+    <meta
+      name="twitter:description"
+      content="Plan, track and ship with kanban boards, milestones, team chat and an AI assistant in one workspace."
+    />
+    <meta name="twitter:image" content="https://nexora.app/og-image.svg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://nexora.app/#organization",
+            "name": "Nexora",
+            "url": "https://nexora.app/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://nexora.app/favicon.svg"
+            },
+            "founder": {
+              "@type": "Person",
+              "name": "Dhruv Soran"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://nexora.app/#website",
+            "url": "https://nexora.app/",
+            "name": "Nexora",
+            "description": "The project workspace that thinks ahead — boards, milestones, chat and an AI assistant.",
+            "publisher": { "@id": "https://nexora.app/#organization" },
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    </script>
+
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem('nexora-theme');
+          var dark = false;
+          if (raw) {
+            var parsed = JSON.parse(raw);
+            if (parsed && parsed.state && typeof parsed.state.dark === 'boolean') dark = parsed.state.dark;
+          } else {
+            dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          }
+          var root = document.documentElement;
+          root.classList.toggle('dark', dark);
+          root.style.colorScheme = dark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

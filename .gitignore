@@ -1,0 +1,13 @@
+node_modules/
+dist/
+build/
+.env
+.env.local
+*.tsbuildinfo
+.next/
+out/
+coverage/
+.DS_Store
+npm-debug.log*
+server/uploads/
+client/.vite/
