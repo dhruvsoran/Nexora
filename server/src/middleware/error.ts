@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import mongoose from 'mongoose';
-import { ApiError } from '../utils/ApiError';
-import { config } from '../config';
+import { ApiError } from '../utils/ApiError.js';
+import { config } from '../config/index.js';
 
 export function notFound(req: Request, res: Response): void {
   res.status(404).json({

@@ -3,7 +3,7 @@ import {
   getBoard,
   updateBoard,
   archiveBoard,
-} from '../controllers/boardController';
+} from '../controllers/boardController.js';
 import {
   createTask,
   getTasks,
@@ -18,8 +18,8 @@ import {
   attachFile,
   addVoiceNote,
   deleteVoiceNote,
-} from '../controllers/taskController';
-import { protect } from '../middleware/auth';
+} from '../controllers/taskController.js';
+import { protect } from '../middleware/auth.js';
 
 const router = Router();
 

@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 import { Types } from 'mongoose';
-import { Board } from '../models/Board';
-import { Task } from '../models/Task';
-import { Activity } from '../models/Activity';
-import { Workspace, MemberDoc } from '../models/Workspace';
-import { ApiError } from '../utils/ApiError';
-import { AuthRequest } from '../middleware/auth';
-import { isMember } from '../services/membership';
+import { Board } from '../models/Board.js';
+import { Task } from '../models/Task.js';
+import { Activity } from '../models/Activity.js';
+import { Workspace, MemberDoc } from '../models/Workspace.js';
+import { ApiError } from '../utils/ApiError.js';
+import { AuthRequest } from '../middleware/auth.js';
+import { isMember } from '../services/membership.js';
 
 async function ensureBoardAccess(boardId: string, userId: string) {
   if (!Types.ObjectId.isValid(boardId)) throw ApiError.badRequest('Invalid board id');

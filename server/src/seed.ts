@@ -1,15 +1,15 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
-import { config } from './config';
-import { User } from './models/User';
-import { Workspace, WorkspaceRole } from './models/Workspace';
-import { Board, ColumnDoc } from './models/Board';
-import { Task, TaskPriority } from './models/Task';
-import { Comment } from './models/Comment';
-import { Channel, ChannelType } from './models/Channel';
-import { Message } from './models/Message';
-import { Activity, ActivityType } from './models/Activity';
-import { Notification, NotificationType } from './models/Notification';
+import { config } from './config/index.js';
+import { User } from './models/User.js';
+import { Workspace, WorkspaceRole } from './models/Workspace.js';
+import { Board, ColumnDoc } from './models/Board.js';
+import { Task, TaskPriority } from './models/Task.js';
+import { Comment } from './models/Comment.js';
+import { Channel, ChannelType } from './models/Channel.js';
+import { Message } from './models/Message.js';
+import { Activity, ActivityType } from './models/Activity.js';
+import { Notification, NotificationType } from './models/Notification.js';
 
 async function seed() {
   console.log('Connecting to MongoDB...');

@@ -1,14 +1,14 @@
 import { Request, Response, NextFunction } from 'express';
 import { Types } from 'mongoose';
-import { Channel, ChannelType } from '../models/Channel';
-import { Message } from '../models/Message';
-import { Workspace, MemberDoc } from '../models/Workspace';
-import { ApiError } from '../utils/ApiError';
-import { AuthRequest } from '../middleware/auth';
-import { isMember, requireRole, CAN_MANAGE } from '../services/membership';
-import { getIO, workspaceRoom, userRoom } from '../services/socketService';
-import { getRedis, cacheKey } from '../config/redis';
-import { getOnlineUserIds } from '../socket';
+import { Channel, ChannelType } from '../models/Channel.js';
+import { Message } from '../models/Message.js';
+import { Workspace, MemberDoc } from '../models/Workspace.js';
+import { ApiError } from '../utils/ApiError.js';
+import { AuthRequest } from '../middleware/auth.js';
+import { isMember, requireRole, CAN_MANAGE } from '../services/membership.js';
+import { getIO, workspaceRoom, userRoom } from '../services/socketService.js';
+import { getRedis, cacheKey } from '../config/redis.js';
+import { getOnlineUserIds } from '../socket/index.js';
 
 async function loadWs(workspaceId: string, userId: string) {
   if (!Types.ObjectId.isValid(workspaceId)) throw ApiError.badRequest('Invalid workspace id');

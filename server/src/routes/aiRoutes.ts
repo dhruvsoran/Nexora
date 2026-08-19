@@ -8,8 +8,8 @@ import {
   prioritizeTasks,
   detectRisks,
   weeklyReport,
-} from '../controllers/aiController';
-import { protect } from '../middleware/auth';
+} from '../controllers/aiController.js';
+import { protect } from '../middleware/auth.js';
 
 const router = Router();
 

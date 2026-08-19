@@ -1,13 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
 import { Types } from 'mongoose';
-import { Board, ColumnDoc } from '../models/Board';
-import { Workspace, MemberDoc } from '../models/Workspace';
-import { Task } from '../models/Task';
-import { Milestone } from '../models/Milestone';
-import { ApiError } from '../utils/ApiError';
-import { AuthRequest } from '../middleware/auth';
-import { isMember, requireRole, CAN_MANAGE } from '../services/membership';
-import { getRedis, cacheKey } from '../config/redis';
+import { Board, ColumnDoc } from '../models/Board.js';
+import { Workspace, MemberDoc } from '../models/Workspace.js';
+import { Task } from '../models/Task.js';
+import { Milestone } from '../models/Milestone.js';
+import { ApiError } from '../utils/ApiError.js';
+import { AuthRequest } from '../middleware/auth.js';
+import { isMember, requireRole, CAN_MANAGE } from '../services/membership.js';
+import { getRedis, cacheKey } from '../config/redis.js';
 
 const CACHE_TTL = 30;
 

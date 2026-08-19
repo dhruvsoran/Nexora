@@ -6,8 +6,8 @@ import {
   getMessages,
   sendMessage,
   getPresence,
-} from '../controllers/chatController';
-import { protect } from '../middleware/auth';
+} from '../controllers/chatController.js';
+import { protect } from '../middleware/auth.js';
 
 const router = Router();
 

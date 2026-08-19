@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { createVoiceSession, stopVoiceSession, getVoiceSession } from '../controllers/agoraController';
-import { protect } from '../middleware/auth';
+import { createVoiceSession, stopVoiceSession, getVoiceSession } from '../controllers/agoraController.js';
+import { protect } from '../middleware/auth.js';
 
 const router = Router();
 

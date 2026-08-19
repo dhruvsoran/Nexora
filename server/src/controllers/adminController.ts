@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
-import { AuthRequest } from '../middleware/auth';
-import { ApiError } from '../utils/ApiError';
-import { User } from '../models/User';
-import { Workspace } from '../models/Workspace';
-import { Board } from '../models/Board';
-import { Task } from '../models/Task';
-import { AuditLog, AuditAction } from '../models/AuditLog';
-import { recordAudit } from '../services/audit';
+import { AuthRequest } from '../middleware/auth.js';
+import { ApiError } from '../utils/ApiError.js';
+import { User } from '../models/User.js';
+import { Workspace } from '../models/Workspace.js';
+import { Board } from '../models/Board.js';
+import { Task } from '../models/Task.js';
+import { AuditLog, AuditAction } from '../models/AuditLog.js';
+import { recordAudit } from '../services/audit.js';
 
 async function requireAdmin(req: AuthRequest) {
   const user = await User.findById(req.user!._id).select('role');

@@ -1,10 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 import multer from 'multer';
 import { randomUUID } from 'crypto';
-import { config } from '../config';
-import { ApiError } from '../utils/ApiError';
-import { AuthRequest } from '../middleware/auth';
-import { uploadBuffer, UploadedFile } from '../services/cloudinary';
+import { config } from '../config/index.js';
+import { ApiError } from '../utils/ApiError.js';
+import { AuthRequest } from '../middleware/auth.js';
+import { uploadBuffer, UploadedFile } from '../services/cloudinary.js';
 
 const ALLOWED_MIME = new Set([
   'image/jpeg',

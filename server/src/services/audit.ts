@@ -1,4 +1,4 @@
-import { AuditLog, AuditAction } from '../models/AuditLog';
+import { AuditLog, AuditAction } from '../models/AuditLog.js';
 
 export async function recordAudit(
   actor: string | null,

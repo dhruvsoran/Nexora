@@ -1,9 +1,9 @@
 import http from 'http';
 import { Server } from 'socket.io';
-import { createApp } from './app';
-import { config } from './config';
-import { connectDb } from './config/db';
-import { setupSocket } from './socket';
+import { createApp } from './app.js';
+import { config } from './config/index.js';
+import { connectDb } from './config/db.js';
+import { setupSocket } from './socket/index.js';
 
 async function main() {
   const app = createApp();
@@ -29,7 +29,7 @@ async function main() {
     io.close();
     httpServer.close(async () => {
       try {
-        const { disconnectDb } = await import('./config/db');
+        const { disconnectDb } = await import('./config/db.js');
         await disconnectDb();
       } catch {
         // best effort

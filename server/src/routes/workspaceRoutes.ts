@@ -9,11 +9,11 @@ import {
   removeMember,
   updateMemberRole,
   members,
-} from '../controllers/workspaceController';
-import { createBoard } from '../controllers/boardController';
-import { workspaceCalendar } from '../controllers/milestoneController';
-import { getSubscription, subscribe, cancelSubscription } from '../controllers/subscriptionController';
-import { protect } from '../middleware/auth';
+} from '../controllers/workspaceController.js';
+import { createBoard } from '../controllers/boardController.js';
+import { workspaceCalendar } from '../controllers/milestoneController.js';
+import { getSubscription, subscribe, cancelSubscription } from '../controllers/subscriptionController.js';
+import { protect } from '../middleware/auth.js';
 
 const router = Router();
 

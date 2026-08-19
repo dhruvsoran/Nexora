@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { boardStats, burndown, workspaceActivity } from '../controllers/analyticsController';
-import { protect } from '../middleware/auth';
+import { boardStats, burndown, workspaceActivity } from '../controllers/analyticsController.js';
+import { protect } from '../middleware/auth.js';
 
 const router = Router();
 

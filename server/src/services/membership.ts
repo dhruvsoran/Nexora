@@ -1,5 +1,5 @@
-import { WorkspaceRole, MemberDoc } from '../models/Workspace';
-import { ApiError } from '../utils/ApiError';
+import { WorkspaceRole, MemberDoc } from '../models/Workspace.js';
+import { ApiError } from '../utils/ApiError.js';
 
 export function getRole(members: MemberDoc[], userId: string): WorkspaceRole | null {
   const member = members.find(

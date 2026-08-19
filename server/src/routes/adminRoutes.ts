@@ -6,8 +6,8 @@ import {
   updateUserRole,
   suspendUser,
   listWorkspaces,
-} from '../controllers/adminController';
-import { protect, adminOnly } from '../middleware/auth';
+} from '../controllers/adminController.js';
+import { protect, adminOnly } from '../middleware/auth.js';
 
 const router = Router();
 

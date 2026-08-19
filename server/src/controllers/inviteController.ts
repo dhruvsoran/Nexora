@@ -1,14 +1,14 @@
 import { Request, Response, NextFunction } from 'express';
 import crypto from 'crypto';
 import { Types } from 'mongoose';
-import { Invitation, InviteStatus } from '../models/Invitation';
-import { Workspace, WorkspaceRole, MemberDoc } from '../models/Workspace';
-import { User } from '../models/User';
-import { ApiError } from '../utils/ApiError';
-import { AuthRequest } from '../middleware/auth';
-import { requireRole, CAN_MANAGE, isMember } from '../services/membership';
-import { sendInviteEmail } from '../services/mail';
-import { config } from '../config';
+import { Invitation, InviteStatus } from '../models/Invitation.js';
+import { Workspace, WorkspaceRole, MemberDoc } from '../models/Workspace.js';
+import { User } from '../models/User.js';
+import { ApiError } from '../utils/ApiError.js';
+import { AuthRequest } from '../middleware/auth.js';
+import { requireRole, CAN_MANAGE, isMember } from '../services/membership.js';
+import { sendInviteEmail } from '../services/mail.js';
+import { config } from '../config/index.js';
 
 const INVITE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
@@ -206,6 +206,6 @@ export async function revokeInvite(req: AuthRequest, res: Response, next: NextFu
 }
 
 async function getRedisDel(_id: Types.ObjectId): Promise<void> {
-  const { getRedis, cacheKey } = await import('../config/redis');
+  const { getRedis, cacheKey } = await import('../config/redis.js');
   await getRedis().del(cacheKey('ws', String(_id))).catch(() => undefined);
 }

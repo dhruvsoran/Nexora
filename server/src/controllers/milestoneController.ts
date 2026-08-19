@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 import { Types } from 'mongoose';
-import { Milestone } from '../models/Milestone';
-import { Board } from '../models/Board';
-import { Task } from '../models/Task';
-import { Workspace, MemberDoc } from '../models/Workspace';
-import { ApiError } from '../utils/ApiError';
-import { AuthRequest } from '../middleware/auth';
-import { isMember, requireRole, CAN_MANAGE } from '../services/membership';
+import { Milestone } from '../models/Milestone.js';
+import { Board } from '../models/Board.js';
+import { Task } from '../models/Task.js';
+import { Workspace, MemberDoc } from '../models/Workspace.js';
+import { ApiError } from '../utils/ApiError.js';
+import { AuthRequest } from '../middleware/auth.js';
+import { isMember, requireRole, CAN_MANAGE } from '../services/membership.js';
 
 async function loadBoard(boardId: string, userId: string) {
   if (!Types.ObjectId.isValid(boardId)) throw ApiError.badRequest('Invalid board id');

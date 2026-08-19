@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { Notification } from '../models/Notification';
-import { AuthRequest } from '../middleware/auth';
+import { Notification } from '../models/Notification.js';
+import { AuthRequest } from '../middleware/auth.js';
 
 export async function myNotifications(req: AuthRequest, res: Response, next: NextFunction): Promise<void> {
   try {

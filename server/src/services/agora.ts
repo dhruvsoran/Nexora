@@ -1,6 +1,6 @@
 import { RtcTokenBuilder, RtcRole } from 'agora-token';
-import { config } from '../config';
-import { ApiError } from '../utils/ApiError';
+import { config } from '../config/index.js';
+import { ApiError } from '../utils/ApiError.js';
 
 const AGORA_API_BASE = 'https://api.agora.io/api/conversational-ai-agent/v2';
 const TOKEN_TTL_SECONDS = 3600;

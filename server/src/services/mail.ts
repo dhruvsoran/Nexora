@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { config, mailEnabled } from '../config';
+import { config, mailEnabled } from '../config/index.js';
 
 interface InviteMailOptions {
   to: string;

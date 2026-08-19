@@ -1,18 +1,18 @@
 import { Request, Response, NextFunction } from 'express';
 import bcrypt from 'bcryptjs';
 import { randomUUID } from 'crypto';
-import { User } from '../models/User';
-import { ApiError } from '../utils/ApiError';
-import { AuthRequest } from '../middleware/auth';
+import { User } from '../models/User.js';
+import { ApiError } from '../utils/ApiError.js';
+import { AuthRequest } from '../middleware/auth.js';
 import {
   signAccessToken,
   signRefreshToken,
   verifyRefreshToken,
-} from '../services/token';
-import { getRedis, cacheKey } from '../config/redis';
-import { config } from '../config';
-import { recordAudit } from '../services/audit';
-import { AuditAction } from '../models/AuditLog';
+} from '../services/token.js';
+import { getRedis, cacheKey } from '../config/redis.js';
+import { config } from '../config/index.js';
+import { recordAudit } from '../services/audit.js';
+import { AuditAction } from '../models/AuditLog.js';
 
 const REFRESH_TOKEN_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 

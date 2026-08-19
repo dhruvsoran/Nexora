@@ -1,13 +1,13 @@
 import { Server, Socket } from 'socket.io';
 import jwt from 'jsonwebtoken';
-import { Workspace, MemberDoc } from '../models/Workspace';
-import { Board } from '../models/Board';
-import { Channel, ChannelType } from '../models/Channel';
-import { verifyAccessToken } from '../services/token';
-import { setIO, boardRoom, workspaceRoom, userRoom } from '../services/socketService';
-import { getRedis, cacheKey } from '../config/redis';
-import { isMember } from '../services/membership';
-import { config } from '../config';
+import { Workspace, MemberDoc } from '../models/Workspace.js';
+import { Board } from '../models/Board.js';
+import { Channel, ChannelType } from '../models/Channel.js';
+import { verifyAccessToken } from '../services/token.js';
+import { setIO, boardRoom, workspaceRoom, userRoom } from '../services/socketService.js';
+import { getRedis, cacheKey } from '../config/redis.js';
+import { isMember } from '../services/membership.js';
+import { config } from '../config/index.js';
 
 type PresenceEntry = { userId: string; socketId: string };
 

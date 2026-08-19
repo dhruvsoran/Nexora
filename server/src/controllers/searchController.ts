@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
-import { Workspace, MemberDoc } from '../models/Workspace';
-import { Board } from '../models/Board';
-import { Task } from '../models/Task';
-import { User } from '../models/User';
-import { AuthRequest } from '../middleware/auth';
+import { Workspace, MemberDoc } from '../models/Workspace.js';
+import { Board } from '../models/Board.js';
+import { Task } from '../models/Task.js';
+import { User } from '../models/User.js';
+import { AuthRequest } from '../middleware/auth.js';
 
 export async function globalSearch(req: AuthRequest, res: Response, next: NextFunction): Promise<void> {
   try {

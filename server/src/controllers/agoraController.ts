@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import { AuthRequest } from '../middleware/auth';
-import { ApiError } from '../utils/ApiError';
-import { startVoiceAgent, leaveVoiceAgent, getVoiceAgentStatus, buildRtcToken } from '../services/agora';
+import { AuthRequest } from '../middleware/auth.js';
+import { ApiError } from '../utils/ApiError.js';
+import { startVoiceAgent, leaveVoiceAgent, getVoiceAgentStatus, buildRtcToken } from '../services/agora.js';
 
 function randomUid(): number {
   return Math.floor(Math.random() * (2 ** 31 - 2)) + 1;

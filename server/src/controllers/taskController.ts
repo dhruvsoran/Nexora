@@ -1,18 +1,18 @@
 import { Request, Response, NextFunction } from 'express';
 import { Types } from 'mongoose';
-import { Task, TaskPriority } from '../models/Task';
-import { Board, ColumnDoc } from '../models/Board';
-import { Workspace, MemberDoc } from '../models/Workspace';
-import { Comment } from '../models/Comment';
-import { Activity, ActivityType } from '../models/Activity';
-import { Notification, NotificationType } from '../models/Notification';
-import { User } from '../models/User';
-import { ApiError } from '../utils/ApiError';
-import { AuthRequest } from '../middleware/auth';
-import { isMember } from '../services/membership';
-import { getIO, boardRoom, userRoom } from '../services/socketService';
-import { getRedis, cacheKey } from '../config/redis';
-import { destroyFile } from '../services/cloudinary';
+import { Task, TaskPriority } from '../models/Task.js';
+import { Board, ColumnDoc } from '../models/Board.js';
+import { Workspace, MemberDoc } from '../models/Workspace.js';
+import { Comment } from '../models/Comment.js';
+import { Activity, ActivityType } from '../models/Activity.js';
+import { Notification, NotificationType } from '../models/Notification.js';
+import { User } from '../models/User.js';
+import { ApiError } from '../utils/ApiError.js';
+import { AuthRequest } from '../middleware/auth.js';
+import { isMember } from '../services/membership.js';
+import { getIO, boardRoom, userRoom } from '../services/socketService.js';
+import { getRedis, cacheKey } from '../config/redis.js';
+import { destroyFile } from '../services/cloudinary.js';
 
 function invalidateBoard(boardId: string) {
   return getRedis().del(cacheKey('board', boardId)).catch(() => undefined);

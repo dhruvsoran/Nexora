@@ -4,22 +4,22 @@ import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
-import { config, isProduction } from './config';
-import { errorHandler, notFound } from './middleware/error';
+import { config, isProduction } from './config/index.js';
+import { errorHandler, notFound } from './middleware/error.js';
 
-import authRoutes from './routes/authRoutes';
-import workspaceRoutes from './routes/workspaceRoutes';
-import boardRoutes from './routes/boardRoutes';
-import chatRoutes from './routes/chatRoutes';
-import aiRoutes from './routes/aiRoutes';
-import uploadRoutes from './routes/uploadRoutes';
-import analyticsRoutes from './routes/analyticsRoutes';
-import notificationRoutes from './routes/notificationRoutes';
-import searchRoutes from './routes/searchRoutes';
-import agoraRoutes from './routes/agoraRoutes';
-import milestoneRoutes from './routes/milestoneRoutes';
-import inviteRoutes from './routes/inviteRoutes';
-import adminRoutes from './routes/adminRoutes';
+import authRoutes from './routes/authRoutes.js';
+import workspaceRoutes from './routes/workspaceRoutes.js';
+import boardRoutes from './routes/boardRoutes.js';
+import chatRoutes from './routes/chatRoutes.js';
+import aiRoutes from './routes/aiRoutes.js';
+import uploadRoutes from './routes/uploadRoutes.js';
+import analyticsRoutes from './routes/analyticsRoutes.js';
+import notificationRoutes from './routes/notificationRoutes.js';
+import searchRoutes from './routes/searchRoutes.js';
+import agoraRoutes from './routes/agoraRoutes.js';
+import milestoneRoutes from './routes/milestoneRoutes.js';
+import inviteRoutes from './routes/inviteRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
 
 export function createApp() {
   const app = express();

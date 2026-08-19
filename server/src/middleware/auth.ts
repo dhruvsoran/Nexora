@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { User, UserDoc } from '../models/User';
-import { ApiError } from '../utils/ApiError';
-import { verifyAccessToken, TokenPayload } from '../services/token';
+import { User, UserDoc } from '../models/User.js';
+import { ApiError } from '../utils/ApiError.js';
+import { verifyAccessToken, TokenPayload } from '../services/token.js';
 
 export interface AuthRequest extends Request {
   user?: UserDoc & { _id: string };

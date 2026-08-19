@@ -1,15 +1,15 @@
 import { Request, Response, NextFunction } from 'express';
 import { Types } from 'mongoose';
-import { Board, ColumnDoc } from '../models/Board';
-import { Task } from '../models/Task';
-import { Workspace, MemberDoc } from '../models/Workspace';
-import { Activity } from '../models/Activity';
-import { ApiError } from '../utils/ApiError';
-import { AuthRequest } from '../middleware/auth';
-import { isMember } from '../services/membership';
-import { generateJson } from '../services/gemini';
-import { User } from '../models/User';
-import { getRedis, cacheKey } from '../config/redis';
+import { Board, ColumnDoc } from '../models/Board.js';
+import { Task } from '../models/Task.js';
+import { Workspace, MemberDoc } from '../models/Workspace.js';
+import { Activity } from '../models/Activity.js';
+import { ApiError } from '../utils/ApiError.js';
+import { AuthRequest } from '../middleware/auth.js';
+import { isMember } from '../services/membership.js';
+import { generateJson } from '../services/gemini.js';
+import { User } from '../models/User.js';
+import { getRedis, cacheKey } from '../config/redis.js';
 
 function invalidateBoard(boardId: string) {
   return getRedis().del(cacheKey('board', boardId)).catch(() => undefined);

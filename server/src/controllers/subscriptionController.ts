@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 import { Types } from 'mongoose';
-import { Workspace, MemberDoc } from '../models/Workspace';
-import { ApiError } from '../utils/ApiError';
-import { AuthRequest } from '../middleware/auth';
-import { isMember, requireRole, CAN_MANAGE } from '../services/membership';
-import { getPlan, PLANS } from '../services/plans';
-import { recordAudit } from '../services/audit';
-import { AuditAction } from '../models/AuditLog';
+import { Workspace, MemberDoc } from '../models/Workspace.js';
+import { ApiError } from '../utils/ApiError.js';
+import { AuthRequest } from '../middleware/auth.js';
+import { isMember, requireRole, CAN_MANAGE } from '../services/membership.js';
+import { getPlan, PLANS } from '../services/plans.js';
+import { recordAudit } from '../services/audit.js';
+import { AuditAction } from '../models/AuditLog.js';
 
 export async function plans(_req: Request, res: Response): Promise<void> {
   res.json({ success: true, data: PLANS });
