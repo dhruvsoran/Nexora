@@ -28,10 +28,10 @@ export function AuthShell({ title, subtitle, children }: PropsWithChildren<{ tit
             <div className="absolute -right-16 bottom-24 h-64 w-64 rounded-full bg-white/10 blur-2xl animate-float [animation-delay:3s]" />
             <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)', backgroundSize: '18px 18px' }} />
 
-            <div className="relative flex items-center gap-2.5">
+            <Link to="/" className="relative flex items-center gap-2.5" aria-label="Nexora home">
               <LogoMark className="h-10 w-10" />
               <span className="text-2xl font-extrabold tracking-tight text-white">Nexora</span>
-            </div>
+            </Link>
 
             <div className="relative">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3.5 py-1.5 text-xs font-semibold backdrop-blur">
@@ -64,7 +64,7 @@ export function AuthShell({ title, subtitle, children }: PropsWithChildren<{ tit
 
           <div className="relative flex flex-col p-6 sm:p-10">
             <div className="mb-8 flex items-center justify-between">
-              <Link to="/" className="inline-flex items-center gap-2 lg:hidden" aria-label="Nexora home">
+              <Link to="/" className="inline-flex items-center gap-2" aria-label="Nexora home">
                 <LogoMark className="h-8 w-8" />
                 <span className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Nexora</span>
               </Link>
