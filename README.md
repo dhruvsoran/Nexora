@@ -33,49 +33,6 @@ projectflow/
 - Voice AI (Agora): one-click "Talk to Nexora AI" voice assistant from any workspace — Agora manages the ASR/LLM/TTS pipeline
 - Notifications (in-app), global search, rate limiting, helmet security headers
 
-## Quick start
-
-1. Copy `.env.example` to `.env` in `server/` and fill in values (MongoDB, Redis, Cloudinary, Gemini).
-2. `npm install` in both `server/` and `client/`.
-3. `server`: `npm run dev` (starts API on `:4000` and socket on same port).
-4. `client`: `npm run dev` (Vite on `:5173`, proxied to the API).
-5. Open http://localhost:5173.
-
-## Environment (server/.env)
-
-```
-PORT=4000
-NODE_ENV=development
-CLIENT_ORIGIN=http://localhost:5173
-
-# MongoDB
-MONGODB_URI=mongodb+srv://...
-
-# Redis
-REDIS_URL=rediss://...
-
-# JWT
-JWT_ACCESS_SECRET=...
-JWT_REFRESH_SECRET=...
-ACCESS_TOKEN_TTL=15m
-REFRESH_TOKEN_TTL=7d
-
-# Cloudinary
-CLOUDINARY_CLOUD_NAME=
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECRET=
-
-# Gemini
-GEMINI_API_KEY=
-
-# Agora (voice AI assistant) — App ID + App certificate from console.agora.io
-AGORA_APP_ID=
-AGORA_APP_CERTIFICATE=
-# System prompt used by the voice agent (optional)
-AGORA_AI_PROMPT=You are Nexora AI, a helpful project-management assistant.
-
-SESSION_SECRET=...
-```
 
 > **Agora voice AI:** the Conversational AI Engine must be enabled for your Agora project
 > (it's on by default for new projects). The app uses **managed mode** for ASR (Deepgram),
